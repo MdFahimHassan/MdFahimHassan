@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="193" height="40" viewBox="0 0 193 40" role="img" aria-label="education">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#0b1b38"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#79c0ff"/>
+      <stop offset="1" stop-color="#1f6feb"/>
+    </linearGradient>
+  </defs>
+  <style>
+    @font-face { font-family: "FH Mono"; font-weight: 700; font-style: normal; src: url(data:font/woff2;base64,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) format("woff2"); }
+    text { font-family: "FH Mono", "JetBrains Mono", "Fira Code", Consolas, Menlo, "DejaVu Sans Mono", monospace; font-weight: 700; font-size: 20px; }
+    .cursor { animation: blink 1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+  </style>
+  <rect x="0.5" y="0.5" width="192" height="39" rx="8" fill="url(#bg)" stroke="#30363d"/>
+  <rect x="14" y="11" width="4" height="18" rx="2" fill="url(#bar)"/>
+  <text x="30" y="27"><tspan fill="#58a6ff">~/</tspan><tspan fill="#e6edf3">education</tspan></text>
+  <rect class="cursor" x="167.0" y="11" width="10" height="18" fill="#58a6ff"/>
+</svg>

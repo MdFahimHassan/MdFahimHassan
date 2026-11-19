@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="181" height="40" viewBox="0 0 181 40" role="img" aria-label="projects">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#0b1b38"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#79c0ff"/>
+      <stop offset="1" stop-color="#1f6feb"/>
+    </linearGradient>
+  </defs>
+  <style>
+    @font-face { font-family: "FH Mono"; font-weight: 700; font-style: normal; src: url(data:font/woff2;base64,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) format("woff2"); }
+    text { font-family: "FH Mono", "JetBrains Mono", "Fira Code", Consolas, Menlo, "DejaVu Sans Mono", monospace; font-weight: 700; font-size: 20px; }
+    .cursor { animation: blink 1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+  </style>
+  <rect x="0.5" y="0.5" width="180" height="39" rx="8" fill="url(#bg)" stroke="#30363d"/>
+  <rect x="14" y="11" width="4" height="18" rx="2" fill="url(#bar)"/>
+  <text x="30" y="27"><tspan fill="#58a6ff">~/</tspan><tspan fill="#e6edf3">projects</tspan></text>
+  <rect class="cursor" x="155.0" y="11" width="10" height="18" fill="#58a6ff"/>
+</svg>
