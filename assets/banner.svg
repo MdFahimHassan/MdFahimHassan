@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-label="Md. Fahim Hassan, CSE student and full-stack developer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="0.55" stop-color="#0b1b38"/>
+      <stop offset="1" stop-color="#10305f"/>
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#79c0ff"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#58a6ff" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="softGlow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feComponentTransfer in="b" result="dim">
+        <feFuncA type="linear" slope="0.45"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="dim"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="typeClip">
+      <rect class="typeRect" x="70" y="178" width="0" height="40"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    text { font-family: "JetBrains Mono", "Fira Code", Consolas, Menlo, "DejaVu Sans Mono", monospace; }
+    .sans { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+
+    .grid { animation: pan 6s linear infinite; }
+    @keyframes pan { to { transform: translate(40px, 40px); } }
+
+    .orbA { animation: floatA 9s ease-in-out infinite alternate; }
+    .orbB { animation: floatB 11s ease-in-out infinite alternate; }
+    @keyframes floatA { to { transform: translate(90px, -30px); } }
+    @keyframes floatB { to { transform: translate(-80px, 40px); } }
+
+    .fadeIn { opacity: 0; animation: fade 0.7s ease-out forwards; }
+    @keyframes fade { to { opacity: 1; } }
+
+    .name { opacity: 0; animation: rise 0.9s ease-out 0.4s forwards; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .typeRect { animation: type 3s steps(44) 1.4s forwards; }
+    @keyframes type { from { width: 0; } to { width: 600px; } }
+
+    .cursor { animation: curmove 3s steps(44) 1.4s forwards, blink 1s step-end infinite; }
+    @keyframes curmove { to { transform: translateX(581px); } }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .tagline { opacity: 0; animation: fade 1s ease-out 4.6s forwards; }
+
+    .snip { opacity: 0; animation: drift 8s ease-in-out infinite; }
+    @keyframes drift {
+      0%   { opacity: 0;    transform: translateY(24px); }
+      20%  { opacity: 0.65; }
+      80%  { opacity: 0.65; }
+      100% { opacity: 0;    transform: translateY(-34px); }
+    }
+
+    .spinA { animation: spin 22s linear infinite; }
+    .spinB { animation: spin 14s linear infinite reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .pulse { animation: pulse 3s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      .fadeIn, .name, .tagline { opacity: 1 !important; }
+      .typeRect { width: 600px !important; }
+      .cursor, .snip { opacity: 0 !important; }
+    }
+  </style>
+
+  <!-- background -->
+  <rect width="1200" height="280" fill="url(#bg)"/>
+  <rect class="grid" x="-40" y="-40" width="1280" height="360" fill="url(#grid)"/>
+  <circle class="orbA" cx="160" cy="250" r="120" fill="#1f6feb" opacity="0.35" filter="url(#blur)"/>
+  <circle class="orbB" cx="1040" cy="40" r="140" fill="#58a6ff" opacity="0.25" filter="url(#blur)"/>
+
+  <!-- terminal title bar -->
+  <rect x="0" y="0" width="1200" height="36" fill="#ffffff" fill-opacity="0.05"/>
+  <circle cx="24" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="46" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="68" cy="18" r="6" fill="#27c93f"/>
+  <text x="600" y="23" font-size="13" fill="#8b949e" text-anchor="middle">fahim@bracu: ~/profile</text>
+
+  <!-- floating code snippets -->
+  <g font-size="15" fill="#58a6ff">
+    <text class="snip" x="660" y="90"  style="animation-delay:0.5s;animation-duration:7s">useState()</text>
+    <text class="snip" x="700" y="240" style="animation-delay:2.2s;animation-duration:9s">@RestController</text>
+    <text class="snip" x="830" y="62"  style="animation-delay:1.3s;animation-duration:8s">JWT</text>
+    <text class="snip" x="760" y="160" style="animation-delay:3.4s;animation-duration:10s">PostgreSQL</text>
+    <text class="snip" x="880" y="228" style="animation-delay:0.9s;animation-duration:8s">BigDecimal</text>
+    <text class="snip" x="905" y="100" style="animation-delay:4.1s;animation-duration:9s">"Hey Vector"</text>
+    <text class="snip" x="1130" y="64" style="animation-delay:2.8s;animation-duration:7s">{ }</text>
+    <text class="snip" x="1110" y="240" style="animation-delay:1.7s;animation-duration:9s">Firebase</text>
+  </g>
+
+  <!-- spinning rings -->
+  <g transform="translate(1010 150)">
+    <g class="spinA">
+      <circle r="95" fill="none" stroke="#58a6ff" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="6 10"/>
+      <circle cx="95" cy="0" r="5" fill="#79c0ff" filter="url(#glow)"/>
+    </g>
+    <g class="spinB">
+      <circle r="62" fill="none" stroke="#79c0ff" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="2 8"/>
+      <circle cx="-62" cy="0" r="4" fill="#ffffff" filter="url(#glow)"/>
+    </g>
+    <text class="pulse" x="0" y="12" font-size="34" font-weight="700" fill="#58a6ff" text-anchor="middle" filter="url(#glow)">&lt;/&gt;</text>
+  </g>
+
+  <!-- main text -->
+  <text class="fadeIn" x="70" y="96" font-size="18" style="animation-delay:0.1s"><tspan fill="#3fb950">fahim@bracu</tspan><tspan fill="#8b949e">:~$ </tspan><tspan fill="#e6edf3">whoami</tspan></text>
+
+  <text class="name sans" x="70" y="160" font-size="60" font-weight="800" fill="url(#nameGrad)" filter="url(#softGlow)">Md. Fahim Hassan</text>
+
+  <text x="70" y="204" font-size="22" fill="#79c0ff" clip-path="url(#typeClip)">CSE @ BRAC University · Full-stack developer</text>
+  <rect class="cursor" x="70" y="185" width="11" height="24" fill="#79c0ff"/>
+
+  <text class="tagline" x="70" y="248" font-size="15" fill="#8b949e">// Why am I coding again???</text>
+</svg>
