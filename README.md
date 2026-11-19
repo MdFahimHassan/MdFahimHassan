@@ -14,17 +14,17 @@
 
 ---
 
-## 👨‍💻 About me
+## About me
 
-- 🛠️ I like building things end to end: arcade games, desktop apps, backends and voice assistants
-- 🧪 Currently experimenting with local LLMs, speech recognition and tool calling ([V.E.C.T.O.R](https://github.com/MdFahimHassan/V.E.C.T.O.R))
-- 💸 Obsessed with turning messy real-life problems into clean algorithms ([BLNCR](https://github.com/MdFahimHassan/BLNCR) settles group debts in the fewest possible transactions)
-- 🌐 My full story, projects and write-ups live on my [portfolio](https://personal-portfolio-legacy110.vercel.app/)
+- I like building things end to end: arcade games, desktop apps, backends and voice assistants
+- Currently experimenting with local LLMs, speech recognition and tool calling ([V.E.C.T.O.R](https://github.com/MdFahimHassan/V.E.C.T.O.R))
+- Obsessed with turning messy real-life problems into clean algorithms ([BLNCR](https://github.com/MdFahimHassan/BLNCR) settles group debts in the fewest possible transactions)
+- My full story, projects and write-ups live on my [portfolio](https://personal-portfolio-legacy110.vercel.app/)
 <!-- TODO: add 1-2 lines about what you study/do and what you're aiming for -->
 
 ---
 
-## 🧰 Tech stack
+## Tech stack
 
 <div align="center">
 
@@ -34,29 +34,29 @@
 
 ---
 
-## 🚀 Featured work
+## Featured work
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎮 <a href="https://github.com/MdFahimHassan/FIFA-Survivor">FIFA-Survivor</a></h3>
+      <h3><a href="https://github.com/MdFahimHassan/FIFA-Survivor">FIFA-Survivor</a></h3>
       Endless World Cup arcade shooter. Dodge, dash and outlast scaling defenders, then upgrade in the Strategy Room.
       <br/><br/><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
     </td>
     <td width="50%" valign="top">
-      <h3>📊 <a href="https://github.com/MdFahimHassan/Corelytics">Corelytics</a></h3>
+      <h3><a href="https://github.com/MdFahimHassan/Corelytics">Corelytics</a></h3>
       Sleek desktop analytics app with modular design, real-time insights and premium branding.
       <br/><br/><img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white" />
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>💸 <a href="https://github.com/MdFahimHassan/BLNCR">BLNCR</a></h3>
+      <h3><a href="https://github.com/MdFahimHassan/BLNCR">BLNCR</a></h3>
       Full-stack group expense splitter that computes the minimum number of transactions to settle all debts.
       <br/><br/><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" /> <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
     </td>
     <td width="50%" valign="top">
-      <h3>🎙️ <a href="https://github.com/MdFahimHassan/V.E.C.T.O.R">V.E.C.T.O.R</a></h3>
+      <h3><a href="https://github.com/MdFahimHassan/V.E.C.T.O.R">V.E.C.T.O.R</a></h3>
       Hands-free Windows voice assistant: local Whisper speech recognition plus LLM tool calling (Gemini or Ollama) to run timers, apps and volume.
       <br/><br/><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Whisper-412991?style=flat-square&logo=openai&logoColor=white" />
     </td>
@@ -65,7 +65,7 @@
 
 ---
 
-## 📊 GitHub stats
+## GitHub stats
 
 <div align="center">
 
@@ -78,7 +78,7 @@
 
 ---
 
-## 🐍 Contribution snake
+## Contribution snake
 
 <div align="center">
 
