@@ -93,7 +93,7 @@ function statsCard({ contributions, repos, stars, followers }) {
     })
     .join("\n");
   const label = `GitHub stats for ${user}: ${items.map(([n, l]) => `${n} ${l.toLowerCase()}`).join(", ")}`;
-  return frame(label, `  <text x="56" y="38" font-size="17" font-weight="700" fill="#f0f6fc">GitHub stats</text>\n${cells}`);
+  return frame(label, `  <text x="56" y="38" font-size="17" font-weight="700" fill="#f0f6fc">At a glance</text>\n${cells}`);
 }
 
 function langsCard(langs) {
