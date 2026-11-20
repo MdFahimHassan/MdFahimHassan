@@ -1,165 +1,107 @@
-// Renders two themed SVG cards (stats.svg, langs.svg) from the GitHub API.
-// Runs inside the Action with the built-in GITHUB_TOKEN. No dependencies, Node 18+.
-// Usage: node scripts/stats.mjs <outDir>
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+<div align="center">
 
-const here = dirname(fileURLToPath(import.meta.url));
-const user = process.env.GITHUB_USER;
-const token = process.env.GITHUB_TOKEN;
-const api = process.env.GITHUB_API_URL || "https://api.github.com";
-const outDir = process.argv[2] || "dist";
+<img src="assets/banner-2.svg" width="100%" alt="Md. Fahim Hassan, full-stack developer and CSE student at BRAC University" />
 
-if (!user) throw new Error("GITHUB_USER is not set");
+<br/>
 
-const headers = {
-  Accept: "application/vnd.github+json",
-  "X-GitHub-Api-Version": "2022-11-28",
-  "User-Agent": "profile-readme-stats",
-  ...(token ? { Authorization: `Bearer ${token}` } : {}),
-};
+<a href="https://fahimhassan.vercel.app/"><img src="assets/btn-portfolio.svg" height="48" alt="View portfolio" /></a>
 
-async function get(path) {
-  const res = await fetch(`${api}${path}`, { headers });
-  if (!res.ok) throw new Error(`GET ${path} failed: ${res.status}`);
-  return res.json();
-}
+</div>
 
-async function allRepos() {
-  const repos = [];
-  for (let page = 1; page <= 10; page++) {
-    const batch = await get(`/users/${user}/repos?per_page=100&type=owner&page=${page}`);
-    repos.push(...batch);
-    if (batch.length < 100) break;
-  }
-  return repos;
-}
+### <img src="assets/sec-about.svg" height="44" alt="About me" />
 
-async function contributionsLastYear() {
-  try {
-    const res = await fetch(`${api}/graphql`, {
-      method: "POST",
-      headers: { ...headers, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `query($login:String!){user(login:$login){contributionsCollection{contributionCalendar{totalContributions}}}}`,
-        variables: { login: user },
-      }),
-    });
-    if (!res.ok) return null;
-    const json = await res.json();
-    return json?.data?.user?.contributionsCollection?.contributionCalendar?.totalContributions ?? null;
-  } catch {
-    return null;
-  }
-}
+- Sophomore **Computer Science & Engineering** student at **BRAC University** (Dhaka, Bangladesh), expected 2029
+- I build and deploy complete full-stack apps with **React, Spring Boot, PostgreSQL and Firebase**
+- Currently building **Qontrol**, a Kahoot-style live quiz platform, with a teammate
 
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-const fmt = (n) => (n == null ? "n/a" : Number(n).toLocaleString("en-US"));
+### <img src="assets/sec-stack.svg" height="44" alt="Tech stack" />
 
-const font = (w) => readFileSync(join(here, "fonts", `dm-sans-${w}.woff2`)).toString("base64");
-const FONT_CSS = `
-    @font-face{font-family:"FH Sans";font-weight:700;src:url(data:font/woff2;base64,${font(700)}) format("woff2");}
-    @font-face{font-family:"FH Sans";font-weight:500;src:url(data:font/woff2;base64,${font(500)}) format("woff2");}
-    text{font-family:"FH Sans","Segoe UI",-apple-system,Helvetica,Arial,sans-serif;}`;
+<div align="center">
 
-const W = 480, H = 200;
-const RED = "#e5533d", YEL = "#f2b632";
+<img src="https://skillicons.dev/icons?i=js,java,py,react,nextjs,tailwind,nodejs,spring,postgres,firebase,docker,git&theme=dark" alt="JavaScript, Java, Python, React, Next.js, Tailwind CSS, Node.js, Spring, PostgreSQL, Firebase, Docker, Git" />
 
-const frame = (label, body) => `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}">
-  <style>${FONT_CSS}
-  </style>
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="12" fill="#0d1117" stroke="#30363d"/>
-  <rect x="24" y="24" width="22" height="4" rx="2" fill="${YEL}"/>
-  <rect x="24" y="33" width="14" height="4" rx="2" fill="${RED}"/>
-${body}
-</svg>
-`;
+</div>
 
-function statsCard({ contributions, repos, stars, followers }) {
-  const items = [
-    [fmt(contributions), "Contributions, last year"],
-    [fmt(repos), "Public repositories"],
-    [fmt(stars), "Stars earned"],
-    [fmt(followers), "Followers"],
-  ];
-  const cells = items
-    .map(([num, label], i) => {
-      const x = i % 2 === 0 ? 24 : 252;
-      const y = i < 2 ? 90 : 156;
-      return `  <text x="${x}" y="${y}" font-size="34" font-weight="700" fill="#f0f6fc" letter-spacing="-0.5">${esc(num)}</text>
-  <text x="${x}" y="${y + 20}" font-size="15" font-weight="500" fill="#8b949e">${esc(label)}</text>`;
-    })
-    .join("\n");
-  const label = `GitHub stats for ${user}: ${items.map(([n, l]) => `${n} ${l.toLowerCase()}`).join(", ")}`;
-  return frame(label, `  <text x="56" y="38" font-size="17" font-weight="700" fill="#f0f6fc">At a glance</text>\n${cells}`);
-}
+### <img src="assets/sec-projects.svg" height="44" alt="Featured projects" />
 
-function langsCard(langs) {
-  const PALETTE = ["#e5533d", "#f2b632", "#c9d1d9", "#8b949e", "#6e7681", "#484f58"];
-  const total = langs.reduce((s, [, b]) => s + b, 0);
-  let shown = langs.slice(0, 5);
-  const rest = langs.slice(5).reduce((s, [, b]) => s + b, 0);
-  if (rest > 0) shown = [...shown, ["Other", rest]];
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>FIFA Survivor</h3>
+      <a href="https://fifa-survivor-two.vercel.app/"><b>Live demo</b></a> &nbsp;|&nbsp; <a href="https://github.com/MdFahimHassan/FIFA-Survivor">Source</a>
+      <br/>
+      Arcade survival shooter with a ten-stage tournament, scaling enemy waves, an in-run Strategy Room shop and 48 playable nations.
+      <ul>
+        <li>Top 3 of 7 departments at BUCC Club Fair 2026, built solo in 5 days</li>
+        <li>Real-time global leaderboard on Firestore, with scores validated by a Vercel serverless function so fake scores get rejected</li>
+        <li>Installable PWA with touch controls and offline handling, played by 200+ people</li>
+      </ul>
+      <img src="https://img.shields.io/badge/JavaScript-21262d?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript" /> <img src="https://img.shields.io/badge/Firebase-21262d?style=flat-square&logo=firebase&logoColor=white" alt="Firebase" /> <img src="https://img.shields.io/badge/Node.js-21262d?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" /> <img src="https://img.shields.io/badge/Vercel-21262d?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+    </td>
+    <td width="50%" valign="top">
+      <h3>BLNCR</h3>
+      <a href="https://blncr-xi.vercel.app/"><b>Live demo</b></a> &nbsp;|&nbsp; <a href="https://github.com/MdFahimHassan/BLNCR">Source</a>
+      <br/>
+      Full-stack group expense splitter that turns messy shared costs into a compact settle-up plan.
+      <ul>
+        <li>Equal, exact and percentage splits with a greedy debt-simplification algorithm</li>
+        <li>Layered Spring Boot REST API with JWT auth, role-based group access and single-use invite links</li>
+        <li>Money handled as integer cents with largest-remainder rounding, so splits always sum exactly</li>
+        <li>Tested at every level, with CI on GitHub Actions</li>
+      </ul>
+      <img src="https://img.shields.io/badge/Java_21-21262d?style=flat-square&logo=openjdk&logoColor=white" alt="Java 21" /> <img src="https://img.shields.io/badge/Spring_Boot-21262d?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" /> <img src="https://img.shields.io/badge/PostgreSQL-21262d?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" /> <img src="https://img.shields.io/badge/React-21262d?style=flat-square&logo=react&logoColor=white" alt="React" /> <img src="https://img.shields.io/badge/Docker-21262d?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Qontrol <sub>(in progress, team of 2)</sub></h3>
+      <a href="https://qontrol-virid.vercel.app/"><b>Live demo</b></a> &nbsp;|&nbsp; <a href="https://github.com/MdFahimHassan/Qontrol">Source</a>
+      <br/>
+      Kahoot-style live quiz platform where a host runs a quiz and players join from their phones with a PIN. I built the React frontend: landing page, login and registration, host dashboard and a quiz builder. It connects to a Spring Boot REST backend (JWT, quiz CRUD) through an Axios client with token handling and protected routes.
+      <br/><br/>
+      <img src="https://img.shields.io/badge/React-21262d?style=flat-square&logo=react&logoColor=white" alt="React" /> <img src="https://img.shields.io/badge/Vite-21262d?style=flat-square&logo=vite&logoColor=white" alt="Vite" /> <img src="https://img.shields.io/badge/Tailwind_CSS-21262d?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /> <img src="https://img.shields.io/badge/Axios-21262d?style=flat-square&logo=axios&logoColor=white" alt="Axios" />
+    </td>
+    <td width="50%" valign="top">
+      <h3>V.E.C.T.O.R</h3>
+      Windows desktop app &nbsp;|&nbsp; <a href="https://github.com/MdFahimHassan/V.E.C.T.O.R">Source</a>
+      <br/>
+      Hands-free voice assistant inspired by J.A.R.V.I.S. Say "Hey Vector" and it uses local Whisper speech recognition plus LLM tool calling (Gemini or Ollama) to set timers, launch apps and control volume.
+      <br/><br/>
+      <img src="https://img.shields.io/badge/Python-21262d?style=flat-square&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/Whisper-21262d?style=flat-square&logo=openai&logoColor=white" alt="Whisper" /> <img src="https://img.shields.io/badge/Ollama-21262d?style=flat-square&logo=ollama&logoColor=white" alt="Ollama" />
+      <br/><br/>
+      Also check out <a href="https://github.com/MdFahimHassan/Corelytics"><b>Corelytics</b></a>, a sleek desktop analytics app with modular design and real-time insights.
+    </td>
+  </tr>
+</table>
 
-  const BAR_X = 24, BAR_W = 432;
-  let body = `  <text x="56" y="38" font-size="17" font-weight="700" fill="#f0f6fc">Top languages</text>\n`;
+### <img src="assets/sec-education.svg" height="44" alt="Education and community" />
 
-  if (total === 0) {
-    body += `  <text x="24" y="110" font-size="15" font-weight="500" fill="#8b949e">No language data yet.</text>`;
-    return frame(`Top languages for ${user}: no data yet`, body);
-  }
+- **BRAC University:** B.Sc. in Computer Science and Engineering, expected 2029
+- **Coursework:** Data Structures, Discrete Mathematics, Algorithms, Linear Algebra, Probability and Statistics
+- **BUCC (BRAC University Computer Club):** General Member, then Executive, then **Senior Executive** (R&D) in 14 months. I run member interview sessions and club fairs.
+- **Languages:** English (fluent), Bangla (fluent)
 
-  let x = BAR_X;
-  const segs = shown.map(([name, bytes], i) => {
-    const pct = (bytes / total) * 100;
-    const w = (bytes / total) * BAR_W;
-    const seg = `    <rect x="${x.toFixed(2)}" y="58" width="${w.toFixed(2)}" height="10" fill="${PALETTE[i]}"/>`;
-    x += w;
-    return { name, pct, seg, color: PALETTE[i] };
-  });
-  body += `  <clipPath id="bar"><rect x="${BAR_X}" y="58" width="${BAR_W}" height="10" rx="5"/></clipPath>
-  <g clip-path="url(#bar)">
-${segs.map((s) => s.seg).join("\n")}
-  </g>\n`;
+### <img src="assets/sec-stats.svg" height="44" alt="GitHub stats" />
 
-  body += segs
-    .map((s, i) => {
-      const col = i % 2, row = Math.floor(i / 2);
-      const lx = col === 0 ? 24 : 252;
-      const ly = 110 + row * 32;
-      return `  <rect x="${lx}" y="${ly - 10}" width="10" height="10" rx="2" fill="${s.color}"/>
-  <text x="${lx + 20}" y="${ly}" font-size="15" font-weight="500" fill="#c9d1d9">${esc(s.name)}</text>
-  <text x="${lx + 204}" y="${ly}" font-size="15" font-weight="500" fill="#8b949e" text-anchor="end">${s.pct.toFixed(1)}%</text>`;
-    })
-    .join("\n");
+<div align="center">
 
-  const label = `Top languages for ${user}: ${segs.map((s) => `${s.name} ${s.pct.toFixed(1)}%`).join(", ")}`;
-  return frame(label, body);
-}
+<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/stats.svg" width="49%" alt="GitHub stats: contributions, repositories, stars and followers" />
+<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/langs.svg" width="49%" alt="Most used programming languages" />
 
-const profile = await get(`/users/${user}`);
-const repos = await allRepos();
-const owned = repos.filter((r) => !r.fork);
-const stars = owned.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+</div>
 
-const totals = new Map();
-await Promise.all(
-  owned.map(async (r) => {
-    try {
-      const l = await get(`/repos/${r.full_name}/languages`);
-      for (const [name, bytes] of Object.entries(l)) totals.set(name, (totals.get(name) || 0) + bytes);
-    } catch {
-      /* skip a repo whose languages cannot be read */
-    }
-  }),
-);
-const langs = [...totals.entries()].sort((a, b) => b[1] - a[1]);
+### <img src="assets/sec-activity.svg" height="44" alt="Contribution activity" />
 
-const contributions = await contributionsLastYear();
+<div align="center">
 
-mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, "stats.svg"), statsCard({ contributions, repos: profile.public_repos, stars, followers: profile.followers }));
-writeFileSync(join(outDir, "langs.svg"), langsCard(langs));
-console.log(`Wrote ${join(outDir, "stats.svg")} and ${join(outDir, "langs.svg")}`);
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/github-snake.svg" />
+  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/github-snake.svg" />
+</picture>
+
+<br/><br/>
+
+<a href="mailto:mdfahimhassanbd7@gmail.com"><img src="assets/footer-2.svg" width="100%" alt="Email Md. Fahim Hassan" /></a>
+
+</div>
