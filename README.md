@@ -1,35 +1,28 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/banner-2.svg" width="100%" alt="Md. Fahim Hassan - CSE student and full-stack developer" />
+<img src="assets/banner-2.svg" width="100%" alt="Md. Fahim Hassan, full-stack developer and CSE student at BRAC University" />
 
 <br/>
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-visit-58A6FF?style=for-the-badge&logo=vercel&logoColor=white)](https://personal-portfolio-legacy110.vercel.app/)
-[![Email](https://img.shields.io/badge/Email-contact-1f6feb?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mdfahimhassanbd7@gmail.com)
-[![GitHub followers](https://img.shields.io/github/followers/MdFahimHassan?style=for-the-badge&logo=github&color=161b22&labelColor=0d1117)](https://github.com/MdFahimHassan)
-![Profile views](https://komarev.com/ghpvc/?username=MdFahimHassan&style=for-the-badge&color=1f6feb&label=PROFILE+VIEWS)
+[![Portfolio](https://img.shields.io/badge/Portfolio-visit-21262d?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0d1117)](https://personal-portfolio-legacy110.vercel.app/)
 
 </div>
 
-## <img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/h-about.svg" height="40" alt="About me" />
+## <img src="assets/sec-about.svg" height="44" alt="About me" />
 
 - Sophomore **Computer Science & Engineering** student at **BRAC University** (Dhaka, Bangladesh), expected 2029
 - I build and deploy complete full-stack apps with **React, Spring Boot, PostgreSQL and Firebase**
-- Built [FIFA Survivor](https://fifa-survivor-two.vercel.app/) solo in 5 days for the BUCC Club Fair and placed **Top 3 out of 7 departments**
-- **Senior Executive** at the BRAC University Computer Club (BUCC), R&D Department
 - Currently building **Qontrol**, a Kahoot-style live quiz platform, with a teammate
 
-## <img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/h-stack.svg" height="40" alt="Tech stack" />
+## <img src="assets/sec-stack.svg" height="44" alt="Tech stack" />
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=js,java,py,react,nextjs,tailwind,html,css,nodejs,spring,postgres,firebase&theme=dark" alt="Languages, frameworks and databases" />
-<br/>
-<img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,vercel,vscode,linux&theme=dark" alt="Tools" />
+<img src="https://skillicons.dev/icons?i=js,java,py,react,nextjs,tailwind,nodejs,spring,postgres,firebase,docker,git&theme=dark" alt="JavaScript, Java, Python, React, Next.js, Tailwind CSS, Node.js, Spring, PostgreSQL, Firebase, Docker, Git" />
 
 </div>
 
-## <img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/h-projects.svg" height="40" alt="Featured projects" />
+## <img src="assets/sec-projects.svg" height="44" alt="Featured projects" />
 
 <table>
   <tr>
@@ -43,7 +36,7 @@
         <li>Real-time global leaderboard on Firestore, with scores validated by a Vercel serverless function so fake scores get rejected</li>
         <li>Installable PWA with touch controls and offline handling, played by 200+ people</li>
       </ul>
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" /> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" /> <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" /> <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" />
+      <img src="https://img.shields.io/badge/JavaScript-21262d?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript" /> <img src="https://img.shields.io/badge/Firebase-21262d?style=flat-square&logo=firebase&logoColor=white" alt="Firebase" /> <img src="https://img.shields.io/badge/Node.js-21262d?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" /> <img src="https://img.shields.io/badge/Vercel-21262d?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
     </td>
     <td width="50%" valign="top">
       <h3>BLNCR</h3>
@@ -56,7 +49,7 @@
         <li>Money handled as integer cents with largest-remainder rounding, so splits always sum exactly</li>
         <li>Tested at every level, with CI on GitHub Actions</li>
       </ul>
-      <img src="https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white" /> <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" /> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+      <img src="https://img.shields.io/badge/Java_21-21262d?style=flat-square&logo=openjdk&logoColor=white" alt="Java 21" /> <img src="https://img.shields.io/badge/Spring_Boot-21262d?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" /> <img src="https://img.shields.io/badge/PostgreSQL-21262d?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" /> <img src="https://img.shields.io/badge/React-21262d?style=flat-square&logo=react&logoColor=white" alt="React" /> <img src="https://img.shields.io/badge/Docker-21262d?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
     </td>
   </tr>
   <tr>
@@ -68,7 +61,7 @@
       <ul>
         <li>Connected to a Spring Boot REST backend (JWT, quiz CRUD) through an Axios client with token handling and protected routes</li>
       </ul>
-      <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" /> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" /> <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" /> <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white" />
+      <img src="https://img.shields.io/badge/React-21262d?style=flat-square&logo=react&logoColor=white" alt="React" /> <img src="https://img.shields.io/badge/Vite-21262d?style=flat-square&logo=vite&logoColor=white" alt="Vite" /> <img src="https://img.shields.io/badge/Tailwind_CSS-21262d?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /> <img src="https://img.shields.io/badge/Axios-21262d?style=flat-square&logo=axios&logoColor=white" alt="Axios" />
     </td>
     <td width="50%" valign="top">
       <h3>V.E.C.T.O.R</h3>
@@ -76,32 +69,30 @@
       <br/><br/>
       Hands-free voice assistant inspired by J.A.R.V.I.S. Say "Hey Vector" and it uses local Whisper speech recognition plus LLM tool calling (Gemini or Ollama) to set timers, launch apps and control volume.
       <br/><br/>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Whisper-412991?style=flat-square&logo=openai&logoColor=white" /> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" />
+      <img src="https://img.shields.io/badge/Python-21262d?style=flat-square&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/Whisper-21262d?style=flat-square&logo=openai&logoColor=white" alt="Whisper" /> <img src="https://img.shields.io/badge/Ollama-21262d?style=flat-square&logo=ollama&logoColor=white" alt="Ollama" />
       <br/><br/>
       Also check out <a href="https://github.com/MdFahimHassan/Corelytics"><b>Corelytics</b></a>, a sleek desktop analytics app with modular design and real-time insights.
     </td>
   </tr>
 </table>
 
-## <img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/h-education.svg" height="40" alt="Education and community" />
+## <img src="assets/sec-education.svg" height="44" alt="Education and community" />
 
-| | |
-|---|---|
-| **BRAC University** | B.Sc. in Computer Science and Engineering, expected 2029 |
-| **Coursework** | Data Structures, Discrete Mathematics, Algorithms, Linear Algebra, Probability and Statistics |
-| **BUCC (BRAC University Computer Club)** | General Member, then Executive, then **Senior Executive** (R&D) in 14 months. I run member interview sessions and club fairs. |
-| **Languages** | English (fluent), Bangla (fluent) |
+- **BRAC University:** B.Sc. in Computer Science and Engineering, expected 2029
+- **Coursework:** Data Structures, Discrete Mathematics, Algorithms, Linear Algebra, Probability and Statistics
+- **BUCC (BRAC University Computer Club):** General Member, then Executive, then **Senior Executive** (R&D) in 14 months. I run member interview sessions and club fairs.
+- **Languages:** English (fluent), Bangla (fluent)
 
-## <img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/h-stats.svg" height="40" alt="GitHub stats" />
+## <img src="assets/sec-stats.svg" height="44" alt="GitHub stats" />
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=MdFahimHassan&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MdFahimHassan&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="Top languages" />
+<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/stats.svg" width="49%" alt="GitHub stats: contributions, repositories, stars and followers" />
+<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/langs.svg" width="49%" alt="Most used programming languages" />
 
 </div>
 
-## <img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/h-activity.svg" height="40" alt="Contribution activity" />
+## <img src="assets/sec-activity.svg" height="44" alt="Contribution activity" />
 
 <div align="center">
 
@@ -113,6 +104,6 @@
 
 <br/><br/>
 
-<a href="mailto:mdfahimhassanbd7@gmail.com"><img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/footer-2.svg" width="100%" alt="Email Md. Fahim Hassan" /></a>
+<a href="mailto:mdfahimhassanbd7@gmail.com"><img src="assets/footer-2.svg" width="100%" alt="Email Md. Fahim Hassan" /></a>
 
 </div>
