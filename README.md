@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/banner.svg" width="100%" alt="Md. Fahim Hassan - CSE student and full-stack developer" />
+<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/banner.svg?v=2" width="100%" alt="Md. Fahim Hassan - CSE student and full-stack developer" />
 
 <br/>
 
@@ -113,6 +113,6 @@
 
 <br/><br/>
 
-<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/footer.svg" width="100%" alt="Thanks for stopping by" />
+<a href="mailto:mdfahimhassanbd7@gmail.com"><img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/main/assets/footer.svg?v=2" width="100%" alt="Email Md. Fahim Hassan" /></a>
 
 </div>
