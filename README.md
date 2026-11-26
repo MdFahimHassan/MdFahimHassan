@@ -81,15 +81,6 @@
 - **BUCC (BRAC University Computer Club):** General Member, then Executive, then **Senior Executive** (R&D) in 14 months. I run member interview sessions and club fairs.
 - **Languages:** English (fluent), Bangla (fluent)
 
-### <img src="assets/sec-stats.svg" height="44" alt="GitHub stats" />
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/stats.svg" width="49%" alt="GitHub stats: contributions, repositories, stars and followers" />
-<img src="https://raw.githubusercontent.com/MdFahimHassan/MdFahimHassan/output/langs.svg" width="49%" alt="Most used programming languages" />
-
-</div>
-
 ### <img src="assets/sec-activity.svg" height="44" alt="Contribution activity" />
 
 <div align="center">
