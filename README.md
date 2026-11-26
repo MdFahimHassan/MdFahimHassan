@@ -33,7 +33,7 @@
       Arcade survival shooter with a ten-stage tournament, scaling enemy waves, an in-run Strategy Room shop and 48 playable nations.
       <ul>
         <li>Top 3 of 7 departments at BUCC Club Fair 2026, built solo in 5 days</li>
-        <li>Real-time global leaderboard on Firestore, with scores validated by a Vercel serverless function so fake scores get rejected</li>
+        <li>Global leaderboard on Firestore, with scores validated by a Vercel serverless function so fake scores get rejected</li>
         <li>Installable PWA with touch controls and offline handling, played by 200+ people</li>
       </ul>
       <img src="https://img.shields.io/badge/JavaScript-21262d?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript" /> <img src="https://img.shields.io/badge/Firebase-21262d?style=flat-square&logo=firebase&logoColor=white" alt="Firebase" /> <img src="https://img.shields.io/badge/Node.js-21262d?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" /> <img src="https://img.shields.io/badge/Vercel-21262d?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
@@ -65,11 +65,11 @@
       <h3>V.E.C.T.O.R</h3>
       Windows desktop app &nbsp;|&nbsp; <a href="https://github.com/MdFahimHassan/V.E.C.T.O.R">Source</a>
       <br/>
-      Hands-free voice assistant inspired by J.A.R.V.I.S. Say "Hey Vector" and it uses local Whisper speech recognition plus LLM tool calling (Gemini or Ollama) to set timers, launch apps and control volume.
+      Hands-free voice assistant inspired by J.A.R.V.I.S. Say "Hey Vector" and it uses local Whisper speech recognition plus LLM tool calling (Gemini, Groq or Ollama) to set timers, launch apps and control volume.
       <br/><br/>
       <img src="https://img.shields.io/badge/Python-21262d?style=flat-square&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/Whisper-21262d?style=flat-square&logo=openai&logoColor=white" alt="Whisper" /> <img src="https://img.shields.io/badge/Ollama-21262d?style=flat-square&logo=ollama&logoColor=white" alt="Ollama" />
       <br/><br/>
-      Also check out <a href="https://github.com/MdFahimHassan/Corelytics"><b>Corelytics</b></a>, a sleek desktop analytics app with modular design and real-time insights.
+      Also check out <a href="https://github.com/MdFahimHassan/Corelytics"><b>Corelytics</b></a>, a desktop calorie and macro calculator built with Electron.
     </td>
   </tr>
 </table>
